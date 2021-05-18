@@ -1,0 +1,58 @@
+body {
+    height : 95vh;
+    width: 95vw;
+    margin: auto;
+}
+
+.board-container {
+    min-width: 80vw;
+    min-height: 80vh;
+    max-width: 80vw;
+    max-height: 80vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.board {
+    min-width: 75vmin;
+    min-height: 75vmin;
+    max-width: 75vmin;
+    max-height: 75vmin;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.board-item {
+    text-align: center;
+    border: 3px solid rgba(0, 0, 0, 0.8);
+    padding: auto;
+    font-size: 15vmin;
+    line-height: 24vmin;
+}
+
+.board div:nth-child(3n) {
+    border-right: none;
+}
+
+.board-item:nth-child(-n + 3) {
+    border-top: none;
+} 
+
+.board-item:nth-child(3n  - 2) {
+    border-left: none;
+} 
+
+.board-item:nth-child(n + 7) {
+    border-bottom: none;
+} 
+
+.title {
+    margin-top: 1vmin;
+    font-size: 8vmin;
+}
+
+h1, h4, .title {
+    text-align: center;
+}
