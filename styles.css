@@ -1,3 +1,9 @@
+:root {
+    --gameBoardWidth: 70vw;
+    --gameBoardHeight: 70vh;
+    --boardMinDimension: 65vmin;
+}
+
 body {
     height : 95vh;
     width: 95vw;
@@ -5,20 +11,20 @@ body {
 }
 
 .board-container {
-    min-width: 80vw;
-    min-height: 80vh;
-    max-width: 80vw;
-    max-height: 80vh;
+    min-width: var(--gameBoardWidth);
+    min-height: var(--gameBoardHeight);
+    max-width: var(--gameBoardWidth);
+    max-height: var(--gameBoardHeight);
     margin: auto;
     display: flex;
     justify-content: center;
 }
 
 .board {
-    min-width: 75vmin;
-    min-height: 75vmin;
-    max-width: 75vmin;
-    max-height: 75vmin;
+    min-width: var(--boardMinDimension);
+    min-height: var(--boardMinDimension);
+    max-width: var(--boardMinDimension);
+    max-height: var(--boardMinDimension);
     margin: auto;
     display: grid;
     grid-template-columns: auto auto auto;
@@ -30,6 +36,11 @@ body {
     padding: auto;
     font-size: 15vmin;
     line-height: 24vmin;
+    color: white;
+}
+
+.colored {
+    color : black;
 }
 
 .board div:nth-child(3n) {
