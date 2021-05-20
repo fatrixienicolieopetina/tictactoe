@@ -3,27 +3,29 @@ const TicTacToe = (function() {
     let turn = 'X';
 
     const GameBoard = (function() {
-        let gridItems = Array(9).fill('I');
+        let gridItems = Array(3).fill(Array.fill(3).fill('I'));
 
-        function isGridItemNotFilled(index) {
-            return gridItems[index] !== 'I';
-        }
-
-        function isGameBoardAllFilled() {
-            return !gridItems.includes('I');
-        }
-
-        function fillGridItem(index, moveType) {
-            if(gridItems[index] === 'I') {
-                gridItems[index] = moveType;
+        function checkWinner() {
+            for(let i = 0; i < gridItems.length; i++) {
+                let rowItems = gridItems[i];
+                if(itemsHaveTheSameValue) {
+                    break;
+                }
             }
+
+            for(let i = 0; i < gridItems.length * 3; i+=3) {
+                if(gridItems[i] == gridItems[i+1] == gridItems[i+2]) {
+                    break;
+                }
+            }
+
         }
 
+        function itemsHaveTheSameValue(items) {
+            return items.every((val, i, arr) => val === arr[0] )
+        }
         return {
             gridItems,
-            isGridItemNotFilled,
-            isGameBoardAllFilled,
-            fillGridItem
         }
     }());
 
