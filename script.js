@@ -74,7 +74,7 @@ const TicTacToe = (function() {
         function displayPlayerMove(element) {
             element.innerText = turn;
             element.setAttribute('class', 'board-item colored');
-            GameBoard.setValue(parseInt(this.element));
+            GameBoard.setValue(parseInt(element.id));
         }
 
         function switchTurn(currentTurn) {
