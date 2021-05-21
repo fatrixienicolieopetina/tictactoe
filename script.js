@@ -1,22 +1,43 @@
 const TicTacToe = (function() {
     
     let turn = 'X';
+    let playerX;
+    let playerO;
 
     const GameBoard = (function() {
-        let gridItems = Array(3).fill(Array.fill(3).fill('I'));
+        let gridItems = Array(9).fill('I');
+
+        function setValue(index) {
+            gridItems[index] = turn;
+        }
 
         function checkWinner() {
-            for(let i = 0; i < gridItems.length; i++) {
-                let rowItems = gridItems[i];
-                if(itemsHaveTheSameValue) {
-                    break;
+            //check row
+            for(let i = 0; i < gridItems.length; i+=3) {
+                if((gridItems[i] == gridItems[i+1] 
+                    && gridItems[i+1] == gridItems[i+2]) 
+                    && gridItems[0] != 'I') {
+                    alert("winner");
                 }
             }
 
-            for(let i = 0; i < gridItems.length * 3; i+=3) {
-                if(gridItems[i] == gridItems[i+1] == gridItems[i+2]) {
-                    break;
+            //check column
+            for(let i = 0 ; i < (gridItems.length)/3; i++) {
+                if((gridItems[i] == gridItems[i+3] 
+                    && gridItems[i+3] == gridItems[i+6])
+                    && gridItems[i] != 'I') {
+                    alert("winner");
                 }
+            }
+
+            //check diagonals
+            if((gridItems[0] == gridItems[4] 
+                && gridItems[4] == gridItems[8] 
+                && gridItems[0] != 'I')|| 
+                (gridItems[2] == gridItems[4] 
+                    && gridItems[4] == gridItems[6] 
+                    && gridItems[0] != 'I')) {
+                    alert("winning")
             }
 
         }
@@ -24,8 +45,10 @@ const TicTacToe = (function() {
         function itemsHaveTheSameValue(items) {
             return items.every((val, i, arr) => val === arr[0] )
         }
+
         return {
-            gridItems,
+            setValue,
+            checkWinner
         }
     }());
 
@@ -37,23 +60,30 @@ const TicTacToe = (function() {
 
             for(let i = 0; i < boardItems.length; i++) {
                 boardItems[i].addEventListener('click', 
-                    displayPlayerMove, {once: true});
+                    processPlayerMove, {once: true});
                 
             }
         }
 
-        function displayPlayerMove() {
-            this.innerText = turn;
-            this.setAttribute('class', 'board-item colored');
+        function processPlayerMove() {
+            displayPlayerMove(this);
             switchTurn(turn);
-            console.log("turn " + turn);
+            GameBoard.checkWinner();
+        }
+
+        function displayPlayerMove(element) {
+            element.innerText = turn;
+            element.setAttribute('class', 'board-item colored');
+            GameBoard.setValue(parseInt(this.element));
         }
 
         function switchTurn(currentTurn) {
             if(currentTurn == 'X') {
                 turn = 'O'
+                playerO.makeAmove();
             } else if (currentTurn == 'O') {
                 turn = 'X';
+                playerX.makeAmove();
             }
         }
 
@@ -67,6 +97,7 @@ const TicTacToe = (function() {
         playerName,
         moveType,
         makeAmove() {
+            alert(`${playerName} makes a move`)
             /**
              * To-do : Add logic here for making a player move based on moveType
              */
@@ -78,8 +109,8 @@ const TicTacToe = (function() {
     }
 
     function start() {
-        let playerX = createPlayer({playerName: 'XXX', moveType: 'X'});
-        let playerO = createPlayer({playerName: 'OOO', moveType: 'O'});
+        playerX = createPlayer({playerName: 'XXX', moveType: 'X'});
+        playerO = createPlayer({playerName: 'OOO', moveType: 'O'});
         DisplayController.initDisplay();
         playerX.makeAmove();
     }
