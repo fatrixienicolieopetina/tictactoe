@@ -1,7 +1,7 @@
 :root {
-    --gameBoardWidth: 70vw;
-    --gameBoardHeight: 70vh;
-    --boardMinDimension: 65vmin;
+    --gameBoardWidth: 60vw;
+    --gameBoardHeight: 60vh;
+    --boardMinDimension: 55vmin;
 }
 
 body {
@@ -9,6 +9,12 @@ body {
     width: 95vw;
     margin: auto;
 }
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+}
+
 
 .board-container {
     min-width: var(--gameBoardWidth);
@@ -39,10 +45,6 @@ body {
     color: white;
 }
 
-.colored {
-    color : black;
-}
-
 .board div:nth-child(3n) {
     border-right: none;
 }
@@ -57,7 +59,11 @@ body {
 
 .board-item:nth-child(n + 7) {
     border-bottom: none;
-} 
+}
+
+.colored {
+    color : black;
+}
 
 .title {
     margin-top: 1vmin;
@@ -66,4 +72,8 @@ body {
 
 h1, h4, .title {
     text-align: center;
+}
+
+.winner {
+    background-color: green;
 }
