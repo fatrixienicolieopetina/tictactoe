@@ -5,9 +5,13 @@
 }
 
 body {
+    max-height : 95vh;
+    max-width: 95vw;
     height : 95vh;
     width: 95vw;
     margin: auto;
+    font-family: Arial;
+    background-color: slategray;
 }
 
 .buttons-container {
@@ -15,6 +19,9 @@ body {
     justify-content: center;
 }
 
+#restart-btn {
+    margin-left: 15px;
+}
 
 .board-container {
     min-width: var(--gameBoardWidth);
@@ -41,8 +48,8 @@ body {
     border: 3px solid rgba(0, 0, 0, 0.8);
     padding: auto;
     font-size: 15vmin;
-    line-height: 24vmin;
-    color: white;
+    line-height: 20vmin;
+    color: slategray;
 }
 
 .board div:nth-child(3n) {
@@ -65,12 +72,21 @@ body {
     color : black;
 }
 
+.info-container {
+    margin-top: 0.5vmax;
+    font-size: 4vmin;
+}
+
+.info-icon {
+    color: #1E90FF;
+}
+
 .title {
-    margin-top: 1vmin;
+    margin-top: 1vmax;
     font-size: 8vmin;
 }
 
-h1, h4, .title {
+h1, h4, h3, h5, .title, .info-container {
     text-align: center;
 }
 

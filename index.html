@@ -7,14 +7,22 @@
         <meta name="author" content="Patricia Nicole Opetina">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
-        <title>Tsik Tsak Toe</title>
+        <title>Tic-Tac-Toe</title>
     </head>
     <body>
-        <div class="title">Tic Tac Toe</div>
-        <h1 id="info">X should make a move</h1>
-        <div class="buttons-container">
-            <button id="restart-btn">Restart</button>
+        <div class="title">Tic-Tac-Toe</div>
+        <div class="info-container">
+            <span class="info-icon">&#9432;</span>
+            <span id="info">X should make a move</span> 
         </div>
+        <h5>
+            <span class="info-icon">&#9432;</span>
+            <em> Hooman is playing X, computer playing O</em>
+        </h5>
+        <div class="buttons-container">
+            <button id="restart-btn">Restart Game</button>
+        </div>
+        <hr/>
         <div class="board-container">
             <div class="board" id="board">
                 <div class="board-item" id="0">X</div>
@@ -29,6 +37,10 @@
             </div>
         </div>
 
+
+        <script src="gameboard.js"></script>
+
+        <script src="displaycontroller.js"></script>
         <script src="script.js"></script>
     </body>
 </html>
