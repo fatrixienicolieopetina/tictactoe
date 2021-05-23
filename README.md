@@ -1,5 +1,6 @@
-<h1>Tsik Tsak Toe</h1>
+<h1>Tic-Tac-Toe</h1>
 <h3>Entry for The Odin Projects's Tic Tac Toe Exercise</h3>
+<h4>Live preview available <a href="https://fatrixienicolieopetina.github.io/tictactoe/">here</a></h4>
 
 <h2>WIL/Thoughts</h2>
 <div>
@@ -28,3 +29,6 @@
         </li>
     </ul>
 </div>
+<a href="https://www.buymeacoffee.com/patthe99" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174">
+</a>
